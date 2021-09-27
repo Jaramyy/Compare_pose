@@ -33,7 +33,6 @@ if __name__ == '__main__':
             #if tfBuffer.can_transform('world','Drone_link',rospy.Time(0)):
             #    print("can")
             #else:
-            
             # (tran,rot) = listener.lookupTransform('world','Drone_link',rospy.Time(0))
             tran2 = tfBuffer.lookup_transform('world','drone_link',rospy.Time(0),rospy.Duration(3.0))
             # (tran2,rot2) = listener.lookupTransform('world','Drone',rospy.Time(0)) 
@@ -74,6 +73,8 @@ if __name__ == '__main__':
             #rate.sleep()   
             #pass
         rate.sleep()
+
+
     print("result:") 
     percent_error = math.sqrt(sum_error/num)
     print("sum_error = ",sum_error)
@@ -82,15 +83,14 @@ if __name__ == '__main__':
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_zlabel('z')           
-    
     #ax.dist = 10
-    plt.savefig("trajectory1.png",dpi=500)
+    plt.savefig("trajectory1.png",dpi=500 )
     ax.view_init(elev=0, azim=90)
     #ax.dist = 10
     plt.savefig("trajectory2.png" ,dpi=500)
     ax.view_init(elev=90, azim=0)
     #ax.dist = 10
-    plt.savefig("trajectory3.png" ,dpi=500)
+    plt.savefig("trajectory3.png " ,dpi=500)
     plt.show()
     
     
